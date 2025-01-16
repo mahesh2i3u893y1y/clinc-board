@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+.content {
+    text-align: center;
+}
+.logout-btn {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.logout-btn:hover {
+    background-color: #e53935;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5%;
+}
+#clinicTable th, #clinicTable td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#clinicTable th {
+    background-color:rgb(196, 148, 197);
+    color: white;
+}
+
+.popup {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+#clinicTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    display: table;
+}
+.accept-btn{
+    border-radius: 10px;
+    padding: 6px 15px;
+    font-weight: 600;
+}
+.patient-cards{
+    display: none;
+}
+
+/*      PATIENT CARDS            */
+@media (max-width: 1045px){
+    #clinicTable {
+        display: none;
+    }
+    .patient-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .patient-card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+    }
+}
