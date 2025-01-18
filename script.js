@@ -28,7 +28,8 @@ loginForm.addEventListener("submit", function (e) {
         errorMessage.textContent = "Password is wrong.";
     } else {
         localStorage.setItem('clincId', clincId);
-        alert("Login Successful! Redirecting...");
-        window.location.href = "/clincData/new.html";  
+        if (localStorage.getItem("clincId")) {
+            window.location.href = "/clincData/new.html";
+        } 
     }
 });

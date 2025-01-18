@@ -9,34 +9,42 @@
     <body>
 
         <div class="content">
-            <h1>Welcome to the Clinic Dashboard!</h1>
+            <h1 class="">Welcome to the Clinic Dashboard!</h1>
             <button class="logout-btn">Logout</button>
         </div>
         <div class="container">
             <h2>Clinic Appointments</h2>
-            <table id="clinicTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Gender</th>
-                        <th>Services</th>
-                        <th>Phone Number</th>
-                        <th>Accept</th>
-                        <th>Modify</th>
-                        <th>Reject</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table id="clinicTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Gender</th>
+                            <th>Services</th>
+                            <th>Phone Number</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
             <div class="patient-cards"></div>
         </div>
-
+        <div class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3 class="modify">Modify Appointment</h3>
+                <label for="appointment-date">Select Date:</label>
+                <input type="date" id="appointment-date">
+                <h4>Select Time Slot:</h4>
+                <div id="time-slots"></div> 
+                <button class="confirm-btn">Confirm</button>
+            </div>
+        </div>
         <script src="script.js"></script>
-
+        
     </body>
 </html>

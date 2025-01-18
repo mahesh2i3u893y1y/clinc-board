@@ -5,15 +5,22 @@ body {
     background-color: #f2f2f2;
 }
 .content {
-    text-align: center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
+
 .logout-btn {
+    align-self:flex-end;
+    margin-right:10px;
     padding: 10px 20px;
     background-color: #f44336;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    
 }
 .logout-btn:hover {
     background-color: #e53935;
@@ -68,9 +75,37 @@ tr:nth-child(even) {
     border-radius: 10px;
     padding: 6px 15px;
     font-weight: 600;
+    border:none;
+    color:white;
+    cursor:pointer;
 }
+.modify-btn{
+    border-radius: 10px;
+    padding: 6px 15px;
+    font-weight: 600;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+.reject-btn{
+    border-radius: 10px;
+    padding: 6px 15px;
+    font-weight: 600;
+    border:none;
+    cursor:pointer;
+    color:white;
+}
+
 .patient-cards{
     display: none;
+}
+
+.status-cell span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 0;
 }
 
 /*      PATIENT CARDS            */
@@ -90,4 +125,209 @@ tr:nth-child(even) {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border: 1px solid #ddd;
     }
+}
+
+
+.status-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+}
+.status-buttons button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+.accept-btn {
+    background-color: #42f584;
+}
+.modify-btn {
+    background-color: #f5b642;
+}
+.reject-btn {
+    background-color: #d46448;
+}
+.status-cell {
+    font-weight: bold;
+    text-align: center;
+}
+.status-accepted {
+    color: green;
+}
+.status-modified {
+    color: orange;
+}
+.status-rejected {
+    color: red;
+}
+@media (max-width: 1045px) {
+    #clinicTable {
+        display: none;
+    }
+    .patient-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .patient-card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+    }
+    .status-buttons {
+        justify-content: space-between;
+    }
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.content {
+    text-align: center;
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #e53935;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(196, 148, 197);
+    color: white;
+}
+
+.popup {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.patient-cards {
+    display: none;
+}
+
+.patient-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 1045px) {
+    #clinicTable {
+        display: none;
+    }
+
+    .patient-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#time-slots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.time-slot {
+    padding: 10px;
+    background-color:rgb(53, 194, 241);
+    border: 1px solid #ddd;
+    color:white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.time-slot.selected {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+}
+
+.confirm-btn{
+    padding: 10px 20px;
+    background-color:rgb(19, 149, 12);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modify{
+    color:blue;
 }
